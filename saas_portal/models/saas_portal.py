@@ -342,7 +342,7 @@ class SaasPortalPlan(models.Model):
         client.sync_client()
         # This is a very ugly hack
         waiting = self.on_create == 'wait'
-        return {'url': url, 'id': client.id, 'client_id': client_id, 'auth_url': auth_url, 'waiting': wait}
+        return {'url': url, 'id': client.id, 'client_id': client_id, 'auth_url': auth_url, 'waiting': waiting}
 
     @api.multi
     def generate_dbname(self, raise_error=True):

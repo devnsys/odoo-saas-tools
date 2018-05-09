@@ -1,0 +1,13 @@
+<odoo>
+  <template id="waiting">
+    <t t-call="website.layout">
+      <t t-set="title">New page</t>
+      <div class="oe_structure">
+        <div class="container">
+          <h1>Welcome to our family!!!</h1>
+          <p>You'll receive an email from our support staff with all the details needed to start using your site</p>
+        </div>
+      </div>
+    </t>
+  </template>
+</odoo>

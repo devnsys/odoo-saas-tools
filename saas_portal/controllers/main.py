@@ -53,7 +53,8 @@ class SaasPortal(http.Controller):
         except MaximumTrialDBException:
             url = request.env['ir.config_parameter'].sudo().get_param('saas_portal.page_for_maximumtrialdb', '/')
             return werkzeug.utils.redirect(url)
-
+        if res.get('waiting'):
+            return http.request.render('saas_portal.waiting')
         return werkzeug.utils.redirect(res.get('url'))
 
     @http.route(['/saas_portal/rename_client'], type='http', auth='user', website=True)

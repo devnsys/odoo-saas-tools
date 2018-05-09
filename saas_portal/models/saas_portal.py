@@ -198,6 +198,7 @@ class SaasPortalPlan(models.Model):
 
     on_create = fields.Selection([
         ('login', 'Log into just created instance'),
+        ('wait', 'Go to SaaS welcome page'),
     ], string="Workflow on create", default='login')
     on_create_email_template = fields.Many2one('mail.template',
                                                default=lambda self: self.env.ref('saas_portal.email_template_create_saas'))
@@ -339,8 +340,9 @@ class SaasPortalPlan(models.Model):
         # TODO make async call of action_sync_server here
         # client.server_id.action_sync_server()
         client.sync_client()
-
-        return {'url': url, 'id': client.id, 'client_id': client_id, 'auth_url': auth_url}
+        # This is a very ugly hack
+        waiting = self.on_create == 'wait'
+        return {'url': url, 'id': client.id, 'client_id': client_id, 'auth_url': auth_url, 'waiting': wait}
 
     @api.multi
     def generate_dbname(self, raise_error=True):

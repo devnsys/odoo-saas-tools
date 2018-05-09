@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'SaaS Portal',
-    'version': '1.0.0',
+    'version': '1.0.1',
     'author': 'Ivan Yelizariev',
     'license': 'LGPL-3',
     'category': 'SaaS',
@@ -15,6 +15,7 @@
         'wizard/config_wizard.xml',
         'wizard/batch_delete.xml',
         'views/saas_portal.xml',
+        'views/templates.xml',
         'views/res_config.xml',
         'data/ir_config_parameter.xml',
         'data/subtype.xml',

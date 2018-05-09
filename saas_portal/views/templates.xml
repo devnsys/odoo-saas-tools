@@ -1,11 +1,13 @@
 <odoo>
   <template id="waiting">
     <t t-call="website.layout">
-      <t t-set="title">New page</t>
+      <t t-set="title">Welcome!!!</t>
       <div class="oe_structure">
         <div class="container">
-          <h1>Welcome to our family!!!</h1>
-          <p>You'll receive an email from our support staff with all the details needed to start using your site</p>
+          <div class="text-center">
+            <h1>Thank you very much for your SignUp! Welcome</h1>
+            <p>We have received your data. We will finish to setup your instance, once it's setup you will receive a confirmation on your mailbox.</p>
+          </div>
         </div>
       </div>
     </t>
